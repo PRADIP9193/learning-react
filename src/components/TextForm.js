@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
@@ -71,19 +71,19 @@ export default function TextForm(props) {
               color: props.mode === "dark" ? "white" : "#152230",
             }}></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1 " onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-1 my-1 " onClick={handleLoClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+        <button className="btn btn-primary mx-1 my-1 " onClick={handleClearClick}>
           Clear text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleBinaryClick}>
+        <button className="btn btn-primary mx-1 my-1 " onClick={handleBinaryClick}>
           Convert to Binary
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 my-1 " onClick={handleCopy}>
           Copy text
         </button>
       </div>
@@ -92,7 +92,7 @@ export default function TextForm(props) {
         style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words, {text.length} characters.
+          {text.split(" ").filter((element)=>{return element.length!==0 }).length} words, {text.length} characters.
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read.</p>
         <h2>Preview</h2>
